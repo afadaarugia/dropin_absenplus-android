@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class ApiClient {
-    public static final String BASE_URL = "http://absenplus.britech.id/api/";
+    public static final String BASE_URL = "http://bad15c959164.ngrok.io/absensi_skripsi/absenplus-web/public/api/";
     public static final String BASE_PATH = "http://absenplus.britech.id/";
     public static final String BASE_URL_BIX_BOX = "https://api.thebigbox.id/";
     public static Retrofit retrofit = null;
