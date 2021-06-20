@@ -113,4 +113,21 @@ public class User{
 	public String getAktif(){
 		return aktif;
 	}
+
+	@Override
+ 	public String toString(){
+		return 
+			"User{" + 
+			"nik = '" + nik + '\'' + 
+			",updated_at = '" + updatedAt + '\'' + 
+			",name = '" + name + '\'' + 
+			",created_at = '" + createdAt + '\'' + 
+			",email_verified_at = '" + emailVerifiedAt + '\'' + 
+			",id = '" + id + '\'' + 
+			",deleted_at = '" + deletedAt + '\'' + 
+			",akses = '" + akses + '\'' + 
+			",email = '" + email + '\'' + 
+			",aktif = '" + aktif + '\'' + 
+			"}";
+		}
 }

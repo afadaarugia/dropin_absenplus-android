@@ -2,7 +2,7 @@ package com.britech.absendulu.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ResponseUser {
+public class ResponseUser{
 
 	@SerializedName("data")
 	private Data data;
@@ -36,4 +36,14 @@ public class ResponseUser {
 	public String getMessage(){
 		return message;
 	}
+
+	@Override
+ 	public String toString(){
+		return 
+			"ResponseUser{" + 
+			"data = '" + data + '\'' + 
+			",success = '" + success + '\'' + 
+			",message = '" + message + '\'' + 
+			"}";
+		}
 }

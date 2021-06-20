@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
                         prefManager.setString(Const.EMAIL, response.body().getData().getUser().getEmail());
                         prefManager.setString(Const.NAMA, response.body().getData().getUser().getName());
                         prefManager.setString(Const.NAMA_KARYAWAN, response.body().getData().getDetail().getNamaLengkap());
-                        prefManager.setString(Const.NIK, String.valueOf(response.body().getData().getDetail().getNikBistel()));
+                        prefManager.setString(Const.NIK, String.valueOf(response.body().getData().getDetail().getNik()));
                         prefManager.setString(Const.LATITUDE, String.valueOf(response.body().getData().getDetail().getSektor().getLatitude()));
                         prefManager.setString(Const.LONGTITUDE, String.valueOf(response.body().getData().getDetail().getSektor().getLongtitude()));
                         prefManager.setString(Const.POSISI, String.valueOf(response.body().getData().getDetail().getNamePosisions().getNama()));

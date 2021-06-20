@@ -58,4 +58,16 @@ public class Data{
 	public String getToken(){
 		return token;
 	}
+
+	@Override
+ 	public String toString(){
+		return 
+			"Data{" + 
+			"path = '" + path + '\'' + 
+			",expires = '" + expires + '\'' + 
+			",detail = '" + detail + '\'' + 
+			",user = '" + user + '\'' + 
+			",token = '" + token + '\'' + 
+			"}";
+		}
 }
