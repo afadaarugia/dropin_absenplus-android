@@ -49,7 +49,7 @@ public class BerandaFragment extends Fragment {
         btnRekapKehadiran = view.findViewById(R.id.rekap_kehadiran);
         jmlHadir = view.findViewById(R.id.jumlah_hadir);
         jmlTidak = view.findViewById(R.id.jumlah_tidak_hadir);
-        jmlCuti = view.findViewById(R.id.jumlah_cuti);
+//        jmlCuti = view.findViewById(R.id.jumlah_cuti);
         btnRekapKehadiran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,7 +84,7 @@ public class BerandaFragment extends Fragment {
                     if (response.body() != null) {
                         jmlHadir.setText(String.valueOf(response.body().getData().getTotalTimeIn()));
                         jmlTidak.setText(String.valueOf(response.body().getData().getTotalTimeOut()));
-                        jmlCuti.setText(String.valueOf(response.body().getData().getTotalCuti()));
+//                        jmlCuti.setText(String.valueOf(response.body().getData().getTotalCuti()));
 
                     }
                 }

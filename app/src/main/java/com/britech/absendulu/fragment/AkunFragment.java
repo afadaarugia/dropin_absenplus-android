@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +30,7 @@ import com.squareup.picasso.Picasso;
 public class AkunFragment extends Fragment {
     PrefManager prefManager;
     FragmentActivity listener;
-    LinearLayout buttonLogout,pengaturan;
+    LinearLayout buttonLogout,pengaturan, bantuan;
     ApiEndpointService apiEndpointService;
     Context context;
     TextView tvNama,tvNik,tvKontak;
@@ -45,13 +46,13 @@ public class AkunFragment extends Fragment {
 
         final View view = inflater.inflate(R.layout.fragment_akun, container, false);
         prefManager = new PrefManager(listener);
-        buttonLogout = view.findViewById(R.id.logout);
+        buttonLogout = view.findViewById(R.id.exit);
         tvNama = view.findViewById(R.id.tvNama);
         tvNama.setText(prefManager.getString(Const.NAMA_KARYAWAN));
         tvNik = view.findViewById(R.id.tvNik);
         tvNik.setText(prefManager.getString(Const.NIK));
         tvKontak = view.findViewById(R.id.tvKontak);
-        tvKontak.setText(prefManager.getString(Const.NOHP));
+        tvKontak.setText(prefManager.getString(Const.EMAIL));
         ivProfil = view.findViewById(R.id.tvFotoProfil);
         Glide.with(view).load(ApiClient.BASE_PATH +prefManager.getString(Const.PATHRECOGNITION)).into(ivProfil);
 
@@ -67,6 +68,18 @@ public class AkunFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(view.getContext(), SettingReminder.class ));
+            }
+        });
+
+        bantuan = view.findViewById(R.id.bantuan);
+        bantuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment;
+                fragment = new BantuanFragment();
+                listener.getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container,fragment,Const.TAG_FRAGMENT).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                        .addToBackStack(Const.TAG_FRAGMENT).commit();
             }
         });
         return view;

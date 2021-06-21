@@ -1,14 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.BantuanFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.BantuanFragment"
+    android:background="#ffff">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <FrameLayout
+        android:id="@+id/header"
+        android:layout_width="411dp"
+        android:layout_height="194dp"
+        android:background="@drawable/ic_path_122"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <LinearLayout
+        android:id="@+id/kotak"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/profil_menu"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <LinearLayout
+            android:id="@+id/info_bantuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:elevation="6dp"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/icBantuan"
+                android:layout_width="103dp"
+                android:layout_height="101dp"
+                android:background="@drawable/ichelp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="30dp"/>
+
+            <TextView
+                android:id="@+id/Judul1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="TUJUAN"
+                android:textColor="@color/colorFont1"
+                android:textSize="21dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Tujuan dari pembuatan aplikasi Absenow ini adalah untuk memberikan kemudahan dalam absensi harian di Dinas Pertanian Kota Samarinda. Pada aplikasi ini menggunakan titik koordinat yang telah ditetapkan pada Dinas Pertanian Samarinda sesuai dengan ketentuan dari pihak Dinas itu sendiri."
+                android:textColor="@color/colorFont1"
+                android:textAlignment="center"
+                android:textSize="14dp"
+                android:textStyle="normal"
+                android:layout_gravity="fill_vertical"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/Judul2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="CARA ABSENSI"
+                android:textColor="@color/colorFont1"
+                android:textSize="21dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"/>
+
+            <TextView
+                android:id="@+id/Caption2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Untuk melakukan absensi pagi atau sore, cukup membuka menu absensi yang berada di tengah navigasi dibawah dan lakukan absensi dengan meng-klik tombol FOTO untuk dapat melakukan foto wajah untuk absensi dan harus berada di lingkungan kantor agar dapat melakukan absensi."
+                android:textColor="@color/colorFont1"
+                android:textSize="14dp"
+                android:textAlignment="center"
+                android:textStyle="normal"
+                android:layout_gravity="fill_vertical"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="100dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
