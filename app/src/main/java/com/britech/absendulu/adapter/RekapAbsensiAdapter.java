@@ -1,6 +1,8 @@
 package com.britech.absendulu.adapter;
 
 import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +17,11 @@ import com.britech.absendulu.manager.PrefManager;
 import com.britech.absendulu.model.getdataabsensi.AbsensiItem;
 import com.britech.absendulu.service.ApiEndpointService;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.TimeZone;
 
 public class RekapAbsensiAdapter extends RecyclerView.Adapter<RekapAbsensiAdapter.ViewHolder>{
@@ -27,6 +31,8 @@ public class RekapAbsensiAdapter extends RecyclerView.Adapter<RekapAbsensiAdapte
     List<AbsensiItem> items = new ArrayList<>();
     ApiEndpointService apiInterface;
     TextView located;
+    Geocoder geocoder;
+    List<Address> addresses;
 
     public RekapAbsensiAdapter(Context context, ApiEndpointService apiInterface) {
         this.context = context;
@@ -50,6 +56,18 @@ public class RekapAbsensiAdapter extends RecyclerView.Adapter<RekapAbsensiAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+        geocoder = new Geocoder(context, Locale.getDefault());
+        PrefManager prefManager = new PrefManager(context);
+
+        double latitude = Double.parseDouble(prefManager.getString(Const.LATITUDE));
+        double longitude = Double.parseDouble(prefManager.getString(Const.LONGTITUDE));
+        try {
+            addresses = geocoder.getFromLocation(latitude,longitude,1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String city = addresses.get(0).getLocality();
         SimpleDateFormat formatOutgoing = new SimpleDateFormat("HH:mm a");
         SimpleDateFormat formatOutgoing2 = new SimpleDateFormat("EEEE, dd MMMM yyyy");
 
@@ -59,7 +77,7 @@ public class RekapAbsensiAdapter extends RecyclerView.Adapter<RekapAbsensiAdapte
 
         String timeIn = formatOutgoing.format(items.get(position).getTimeIn());
         String createds = formatOutgoing2.format(items.get(position).getCreatedAt());
-        String located = "Samarinda";
+        String located = city;
 
         holder.created.setText(createds);
         holder.located.setText(located);

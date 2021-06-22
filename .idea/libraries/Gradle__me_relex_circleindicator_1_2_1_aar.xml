@@ -1,11 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: me.relex:circleindicator:1.2.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b04a37f3392156ddad4a1895e224572/jetified-circleindicator-1.2.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b04a37f3392156ddad4a1895e224572/jetified-circleindicator-1.2.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/05b852e40078be1d9c4af2eb6107c01f/jetified-circleindicator-1.2.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/05b852e40078be1d9c4af2eb6107c01f/jetified-circleindicator-1.2.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/05b852e40078be1d9c4af2eb6107c01f/jetified-circleindicator-1.2.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2941169ae3e7014ca2c1c123226f5655/jetified-circleindicator-1.2.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2941169ae3e7014ca2c1c123226f5655/jetified-circleindicator-1.2.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2941169ae3e7014ca2c1c123226f5655/jetified-circleindicator-1.2.1/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.relex/circleindicator/1.2.1/981fa939878bc02b3f262d28abac874152a48efd/circleindicator-1.2.1-javadoc.jar!/" />

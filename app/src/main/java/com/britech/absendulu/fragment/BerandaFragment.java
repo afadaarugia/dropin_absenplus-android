@@ -60,14 +60,14 @@ public class BerandaFragment extends Fragment {
                         .addToBackStack(Const.TAG_FRAGMENT).commit();
             }
         });
-        btnRekapSlipGaji = view.findViewById(R.id.rekap_slip_gaji);
-        btnRekapSlipGaji.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), RekapSlipGaji.class);
-                startActivity(intent);
-            }
-        });
+//        btnRekapSlipGaji = view.findViewById(R.id.rekap_slip_gaji);
+//        btnRekapSlipGaji.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), RekapSlipGaji.class);
+//                startActivity(intent);
+//            }
+//        });
 
         getAllAbsen();
         return view;
