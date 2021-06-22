@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.britech.absendulu.R;
+import com.britech.absendulu.config.Const;
+import com.britech.absendulu.manager.PrefManager;
 import com.britech.absendulu.model.getdataabsensi.AbsensiItem;
 import com.britech.absendulu.service.ApiEndpointService;
 
@@ -20,9 +22,11 @@ import java.util.TimeZone;
 
 public class RekapAbsensiAdapter extends RecyclerView.Adapter<RekapAbsensiAdapter.ViewHolder>{
 
+    PrefManager prefManager;
     Context context;
     List<AbsensiItem> items = new ArrayList<>();
     ApiEndpointService apiInterface;
+    TextView located;
 
     public RekapAbsensiAdapter(Context context, ApiEndpointService apiInterface) {
         this.context = context;
@@ -39,6 +43,8 @@ public class RekapAbsensiAdapter extends RecyclerView.Adapter<RekapAbsensiAdapte
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_rekap_kehadiran,parent,false);
+//        located = view.findViewById(R.id.located);
+//        located.setText(prefManager.getString(Const.SEKTOR));
         return new ViewHolder(view);
     }
 
@@ -53,8 +59,10 @@ public class RekapAbsensiAdapter extends RecyclerView.Adapter<RekapAbsensiAdapte
 
         String timeIn = formatOutgoing.format(items.get(position).getTimeIn());
         String createds = formatOutgoing2.format(items.get(position).getCreatedAt());
+        String located = "Samarinda";
 
         holder.created.setText(createds);
+        holder.located.setText(located);
         holder.tvTimein.setText(timeIn);
         holder.tvTimein.setTextColor(context.getResources().getColor(R.color.green));
 
@@ -77,7 +85,7 @@ public class RekapAbsensiAdapter extends RecyclerView.Adapter<RekapAbsensiAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView tvTimein, tvTimeOut,created;
+        TextView tvTimein, tvTimeOut,created, located;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -85,6 +93,8 @@ public class RekapAbsensiAdapter extends RecyclerView.Adapter<RekapAbsensiAdapte
             tvTimein = itemView.findViewById(R.id.tvTimeIn);
             tvTimeOut = itemView.findViewById(R.id.tvTimeOut);
             created = itemView.findViewById(R.id.created);
+            located = itemView.findViewById(R.id.located);
+
         }
     }
 }

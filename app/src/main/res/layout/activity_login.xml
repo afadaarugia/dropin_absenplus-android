@@ -9,10 +9,10 @@
 
     <ImageView
         android:id="@+id/logo_image"
-        android:layout_width="167dp"
-        android:layout_height="137dp"
-        android:layout_marginTop="80dp"
-        android:src="@drawable/logo_absen"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="90dp"
+        android:src="@drawable/logo"
         android:transitionName="logo_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,21 +87,18 @@ Masuk ke dalam absenplus. Pastikan Email dan Password Anda tidak diketahui orang
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
-
-
         </LinearLayout>
-
-        <Button
-            android:id="@+id/button_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:background="#0557D2"
-            android:text="Masuk"
-            android:textColor="#fff"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
+            <Button
+                android:id="@+id/button_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="#0557D2"
+                android:text="Masuk"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:elevation="9dp"
+                android:textStyle="bold"/>
 
     </LinearLayout>
     <!--   android:background="@drawable/shadow"-->

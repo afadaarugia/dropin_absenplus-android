@@ -15,6 +15,7 @@ public interface Const {
     public static final String IDABSEN ="idAbsen";
     public static final String LATITUDE ="latitude";
     public static final String LONGTITUDE ="longtitude";
+    public static final String SEKTOR ="sektor";
     public static final String TIMEOUT ="time_out";
     public static final String USERID ="user_id";
     public static final String ID ="id";
