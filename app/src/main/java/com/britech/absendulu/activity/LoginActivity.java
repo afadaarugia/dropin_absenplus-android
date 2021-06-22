@@ -104,6 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                         prefManager.setString(Const.NIK, String.valueOf(response.body().getData().getDetail().getNik()));
                         prefManager.setString(Const.LATITUDE, String.valueOf(response.body().getData().getDetail().getSektor().getLatitude()));
                         prefManager.setString(Const.LONGTITUDE, String.valueOf(response.body().getData().getDetail().getSektor().getLongtitude()));
+                        prefManager.setString(Const.SEKTOR, String.valueOf(response.body().getData().getDetail().getSektor().getNama()));
                         prefManager.setString(Const.POSISI, String.valueOf(response.body().getData().getDetail().getNamePosisions().getNama()));
                         prefManager.setString(Const.NOHP, String.valueOf(response.body().getData().getDetail().getNoTelp()));
                         prefManager.setString(Const.PATHRECOGNITION, String.valueOf(response.body().getData().getPath().getFoto()));
@@ -133,3 +134,4 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+    
