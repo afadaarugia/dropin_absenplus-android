@@ -1,6 +1,9 @@
 package com.britech.absendulu.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.biometric.BiometricPrompt;
+import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +11,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.britech.absendulu.R;
 import com.britech.absendulu.config.Const;
@@ -17,6 +21,8 @@ import com.britech.absendulu.service.ApiClient;
 import com.britech.absendulu.service.ApiEndpointService;
 import com.google.android.material.textfield.TextInputLayout;
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
+
+import java.util.concurrent.Executor;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,6 +37,9 @@ public class LoginActivity extends AppCompatActivity {
     ApiEndpointService apiEndpointService;
     Context context;
 
+    private Executor executor;
+    private BiometricPrompt biometricPrompt;
+    private BiometricPrompt.PromptInfo promptInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +49,48 @@ public class LoginActivity extends AppCompatActivity {
         //Hooks
 //        apiEndpointService = ApiClient.getApiClient().create(ApiEndpointService.class);
         context = this;
-        initialLayout();
         eNik = (TextInputLayout) findViewById(R.id.nik);
         ePassword = (TextInputLayout) findViewById(R.id.password);
         PrefManager prefManager = new PrefManager(getApplicationContext());
         if (!prefManager.getString("token").equals("") && !prefManager.getString("password").equals("")) {
-            startMainActivity();
+            loginBiometric();
             getAccessToken(prefManager.getString("token"),prefManager.getString("password"));
 
         }
+        initialLayout();
+    }
+
+    private void loginBiometric(){
+        executor = ContextCompat.getMainExecutor(this);
+        biometricPrompt = new BiometricPrompt(LoginActivity.this, executor, new BiometricPrompt.AuthenticationCallback() {
+            @Override
+            public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
+                super.onAuthenticationError(errorCode, errString);
+                Toast.makeText(getApplicationContext(),
+                        "Authentication error: " + errString, Toast.LENGTH_SHORT)
+                        .show();
+            }
+
+            @Override
+            public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
+                super.onAuthenticationSucceeded(result);
+                startMainActivity();
+            }
+
+            @Override
+            public void onAuthenticationFailed() {
+                super.onAuthenticationFailed();
+                Toast.makeText(getApplicationContext(), "Authentication failed",
+                        Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
+        promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                .setTitle("Biometric Login")
+                .setSubtitle("Login Menggunakan Sidik Jari")
+                .setNegativeButtonText("Login Pakai Akun")
+                .build();
+        biometricPrompt.authenticate(promptInfo);
     }
 
     private void startMainActivity() {
@@ -110,8 +152,8 @@ public class LoginActivity extends AppCompatActivity {
                         prefManager.setString(Const.ID, String.valueOf(response.body().getData().getUser().getId()));
                         prefManager.setString(Const.PASSWORD, password);
                     }
-                    startActivity(new Intent(LoginActivity.this, Dashboard.class));
-                    finish();
+                    startMainActivity();
+                    //finish();
                 }else{
                     new SweetAlertDialog(LoginActivity.this, SweetAlertDialog.WARNING_TYPE)
                             .setTitleText("Username/password salah !")
