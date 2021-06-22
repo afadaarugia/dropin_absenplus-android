@@ -54,8 +54,6 @@ public class LoginActivity extends AppCompatActivity {
         PrefManager prefManager = new PrefManager(getApplicationContext());
         if (!prefManager.getString("token").equals("") && !prefManager.getString("password").equals("")) {
             loginBiometric();
-            getAccessToken(prefManager.getString("token"),prefManager.getString("password"));
-
         }
         initialLayout();
     }

@@ -3,12 +3,9 @@ package com.britech.absendulu.fragment;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.ContentUris;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.location.Location;
@@ -18,21 +15,16 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -49,11 +41,8 @@ import com.britech.absendulu.model.postdataabsen.ResponseDataAbsen;
 import com.britech.absendulu.model.responseRecognition.ResponseRecognition;
 import com.britech.absendulu.model.updatedataabsen.ResponseGetIdUpdate;
 import com.britech.absendulu.model.updatedataabsen.ResponseUpdateDataAbsen;
-import com.britech.absendulu.model.uploadRecognition.ResponseMyFoto;
 import com.britech.absendulu.service.ApiClient;
 import com.britech.absendulu.service.ApiEndpointService;
-import com.bumptech.glide.Glide;
-import com.google.android.gms.common.api.Api;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -63,22 +52,15 @@ import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
-import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 import java.util.TimeZone;
 
-import gun0912.tedbottompicker.TedBottomPicker;
-import id.zelory.compressor.Compressor;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -663,6 +645,7 @@ public class AbsensiFragment extends Fragment implements EasyPermissions.Permiss
                                                 if (response.isSuccessful()){
                                                     new SweetAlertDialog(listener)
                                                         .setTitleText("Berhasil Absen")
+                                                            .setContentText(response.body().getData().getAddress())
                                                         .show();
 
 //                                                    buttonAbsenMasuk.setVisibility(View.INVISIBLE);

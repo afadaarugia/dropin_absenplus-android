@@ -333,6 +333,7 @@
                     android:textColor="@color/colorFont1"
                     android:src="@drawable/document" />
                 <TextView
+                    android:id="@+id/tv_total"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="#0e62e8"
@@ -362,6 +363,7 @@
                     android:orientation="horizontal"
                     android:gravity="end">
                     <TextView
+                        android:id="@+id/tv_total_lalu"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="0"

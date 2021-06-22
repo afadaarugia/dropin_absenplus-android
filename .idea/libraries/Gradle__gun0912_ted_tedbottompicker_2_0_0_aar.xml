@@ -1,16 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: gun0912.ted:tedbottompicker:2.0.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1676d014b46d0a737c136400d8d0ebdf/jetified-tedbottompicker-2.0.0/annotations.zip!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/54b9a50abb075c5747beacb82e60c50c/jetified-tedbottompicker-2.0.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fd2def538e196626614b0fcd4c7c68be/jetified-tedbottompicker-2.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1676d014b46d0a737c136400d8d0ebdf/jetified-tedbottompicker-2.0.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1676d014b46d0a737c136400d8d0ebdf/jetified-tedbottompicker-2.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1676d014b46d0a737c136400d8d0ebdf/jetified-tedbottompicker-2.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/54b9a50abb075c5747beacb82e60c50c/jetified-tedbottompicker-2.0.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/54b9a50abb075c5747beacb82e60c50c/jetified-tedbottompicker-2.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/54b9a50abb075c5747beacb82e60c50c/jetified-tedbottompicker-2.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fd2def538e196626614b0fcd4c7c68be/jetified-tedbottompicker-2.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fd2def538e196626614b0fcd4c7c68be/jetified-tedbottompicker-2.0.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/gun0912.ted/tedbottompicker/2.0.0/b59089f6d279129d86d62a600c2bc30dbe706eb5/tedbottompicker-2.0.0-javadoc.jar!/" />

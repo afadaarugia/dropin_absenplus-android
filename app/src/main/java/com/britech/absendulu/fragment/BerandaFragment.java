@@ -2,7 +2,6 @@ package com.britech.absendulu.fragment;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.britech.absendulu.R;
-import com.britech.absendulu.activity.RekapSlipGaji;
 import com.britech.absendulu.config.Const;
 import com.britech.absendulu.manager.PrefManager;
 import com.britech.absendulu.model.getdataabsensi.ResponseGetDataAbsensi;
@@ -31,7 +29,7 @@ public class BerandaFragment extends Fragment {
 
     PrefManager prefManager;
     FragmentActivity listener;
-    TextView tvNamaKaryawan,tvNik,jmlHadir, jmlTidak,jmlCuti;
+    TextView tvNamaKaryawan,tvNik,jmlHadir, jmlTidak,jmlCuti,tvTotal,tvTotalLalu;
     LinearLayout btnRekapKehadiran,btnRekapSlipGaji;
     public BerandaFragment() {
     }
@@ -49,6 +47,8 @@ public class BerandaFragment extends Fragment {
         btnRekapKehadiran = view.findViewById(R.id.rekap_kehadiran);
         jmlHadir = view.findViewById(R.id.jumlah_hadir);
         jmlTidak = view.findViewById(R.id.jumlah_tidak_hadir);
+        tvTotalLalu = view.findViewById(R.id.tv_total_lalu);
+        tvTotal = view.findViewById(R.id.tv_total);
 //        jmlCuti = view.findViewById(R.id.jumlah_cuti);
         btnRekapKehadiran.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +84,8 @@ public class BerandaFragment extends Fragment {
                     if (response.body() != null) {
                         jmlHadir.setText(String.valueOf(response.body().getData().getTotalTimeIn()));
                         jmlTidak.setText(String.valueOf(response.body().getData().getTotalTimeOut()));
+                        tvTotalLalu.setText(String.valueOf(response.body().getData().getTtlAbsenLalu()));
+                        tvTotal.setText(String.valueOf(response.body().getData().getTotalAbsen()));
 //                        jmlCuti.setText(String.valueOf(response.body().getData().getTotalCuti()));
 
                     }
