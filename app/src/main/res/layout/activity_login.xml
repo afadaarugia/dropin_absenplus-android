@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Silahkan isi nik dan password anda untuk
-Masuk ke dalam absenplus. Pastikan Email dan Password Anda tidak diketahui orang lain."
+Masuk ke dalam absenplus. Pastikan NIK dan Password Anda tidak diketahui orang lain."
             android:textColor="#363636"
             android:textSize="12sp" />
 
