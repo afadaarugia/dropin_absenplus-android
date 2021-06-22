@@ -226,7 +226,7 @@
         android:layout_marginBottom="100dp"
         android:background="@drawable/shadow"
         android:orientation="vertical"
-        android:elevation="16dp"
+        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -278,13 +278,14 @@
         android:layout_height="120dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="80dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/shadow"
         android:orientation="vertical"
+        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rekap_kehadiran"
         app:layout_constraintTop_toBottomOf="@+id/rekap_kehadiran">
 
         <LinearLayout
@@ -293,6 +294,14 @@
             android:background="@drawable/shadow"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="@id/cardview_timeout">
+
+            <ImageView
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/seo_report" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -307,11 +316,13 @@
                     android:textColor="@color/colorFont1"
                     android:textSize="16sp"
                     android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -319,16 +330,19 @@
                     android:text="Kehadiran bulan ini"
                     android:textSize="14sp"
                     android:gravity="center"
+                    android:textColor="@color/colorFont1"
                     android:src="@drawable/document" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="#0e62e8"
                     android:text="0"
-                    android:layout_marginLeft="180dp"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginLeft="0dp"
                     android:textSize="16sp"
                     android:src="@drawable/document" />
             </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_marginTop="6dp"
@@ -339,17 +353,20 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="26dp"
                         android:text="Kehadiran bulan kemarin"
+                        android:textColor="@color/colorFont1"
                         android:textSize="14sp"
                         android:src="@drawable/document" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    android:gravity="end">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="0"
-                        android:layout_marginLeft="151dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginStart="75dp"
                         android:textColor="#0e62e8"
                         android:textSize="16sp"
                         android:src="@drawable/document" />
